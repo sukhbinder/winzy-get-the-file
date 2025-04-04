@@ -20,7 +20,7 @@ def create_parser(subparser):
         help="Folder path to search. Defaults to the current directory.",
     )
     parser.add_argument(
-        "-p", "--pattern", required=True, help="Pattern to match files."
+        "-p", "--pattern", type=str, required=True, help="Pattern to match files."
     )
     parser.add_argument(
         "-t",
@@ -28,9 +28,10 @@ def create_parser(subparser):
         choices=["latest", "oldest", "random", "lastcreated"],
         default="latest",
         help='Type of file to return. Defaults to "latest".',
+        type=str,
     )
     parser.add_argument(
-        "-s" "--include-subfolder", help="Include subfolders", action="store_true"
+        "-s", "--include-subfolder", help="Include subfolders", action="store_true"
     )
     return parser
 
