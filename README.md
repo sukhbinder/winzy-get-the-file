@@ -23,6 +23,44 @@ winzy install winzy-get-the-file
 
 To get help type ``winzy  gtf --help``
 
+### Command Line Options
+
+```
+usage: winzy gtf [-h] [-f FOLDER] -p PATTERN
+                 [-t {latest,oldest,random,lastcreated}] [-s]
+
+Get files from a folder
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FOLDER, --folder FOLDER
+                        Folder path to search. Defaults to the current
+                        directory.
+  -p PATTERN, --pattern PATTERN
+                        Pattern to match files.
+  -t {latest,oldest,random,lastcreated}, --type {latest,oldest,random,lastcreated}
+                        Type of file to return. Defaults to "latest".
+  -s, --include-subfolder
+                        Include subfolders
+```
+
+### Examples
+
+Get the latest file matching a pattern:
+```bash
+winzy gtf -p "*.txt"
+```
+
+Get the oldest file from a specific folder:
+```bash
+winzy gtf -f /path/to/folder -p "*.py" -t oldest
+```
+
+Get a random file including subfolders:
+```bash
+winzy gtf -p "*.md" -t random -s
+```
+
 ## Development
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
